@@ -10,9 +10,17 @@ Rails.application.routes.draw do
     member do
       get :followings
       get :followers
+      get :likes
     end
   end
   
-  resources :microposts, only: [:create, :destroy]
+  resources :microposts, only: [:create, :destroy] do
+    #お気に入り登録ユーザ一覧表示のルーティング修正要
+    member do
+      get :funs
+    end
+  end
+  
   resources :relationships, only: [:create, :destroy]
+  resources :favs, only: [:create, :destroy]
 end
