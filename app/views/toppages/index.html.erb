@@ -1,7 +1,6 @@
 <% if logged_in? %>
   <div class="row">
     <aside class="col-md-4">
-      <%= link_to 'Favorites', likes_user_path(current_user), class: 'btn btn-info btn-block' %>
       <%= form_for(@micropost) do |f| %>
         <div class="form-group">
           <%= f.text_area :content, class: 'form-control', rows: 5 %>
